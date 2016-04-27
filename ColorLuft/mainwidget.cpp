@@ -83,7 +83,7 @@ void CMainWidget::startStopLufting(void)
        lufter->stopLufting();
 
        if (isByHandLufting) {
-           qDebug() << "sliders:" << tools->rSlider->value() << tools->gSlider->value() << tools->bSlider->value();
+           // qDebug() << "sliders:" << tools->rSlider->value() << tools->gSlider->value() << tools->bSlider->value();
            info->setLufts(qBound(-126, lufter->getLuftR() + tools->rSlider->value(), 126),
                           qBound(-126, lufter->getLuftG() + tools->gSlider->value(), 126),
                           qBound(-126, lufter->getLuftB() + tools->bSlider->value(), 126));
