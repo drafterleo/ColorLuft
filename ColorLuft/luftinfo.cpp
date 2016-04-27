@@ -45,33 +45,34 @@ void CLuftInfo::paintEvent(QPaintEvent *event)
         painter.drawLine(xBeg, yCenter + i*20, xEnd, yCenter + i*20);
     }
 
+    qreal scale = 1.8;
     //painter.setPen(Qt::NoPen);
     painter.setBrush(QColor(0xFF, 0, 0, 150));
-    box.setBottom(yCenter - qRound(luftR * 1.5));
+    box.setBottom(yCenter - qRound(luftR * scale));
     painter.drawRect(box);
     painter.setBrush(QColor(0, 0xFF, 0, 150));
     box.translate(boxWidth, 0);
-    box.setBottom(yCenter - qRound(luftG * 1.5));
+    box.setBottom(yCenter - qRound(luftG * scale));
     painter.drawRect(box);
     painter.setBrush(QColor(0, 0, 0xFF, 150));
     box.translate(boxWidth, 0);
-    box.setBottom(yCenter - qRound(luftB * 1.5));
+    box.setBottom(yCenter - qRound(luftB * scale));
     painter.drawRect(box);
     painter.setBrush(QColor(0xFF, 0xFF, 0, 150)); //yellow
     box.translate(boxWidth, 0);
-    box.setBottom(yCenter - qRound((luftR + luftG)/2 * 1.5));
+    box.setBottom(yCenter - qRound((luftR + luftG)/2 * scale));
     painter.drawRect(box);
     painter.setBrush(QColor(0xFF, 0x80, 0, 150)); //orange
     box.translate(boxWidth, 0);
-    box.setBottom(yCenter - qRound((luftR + luftG * (128.0/256.0))/2 * 1.5));
+    box.setBottom(yCenter - qRound((luftR + luftG * (128.0/256.0))/2 * scale));
     painter.drawRect(box);
     painter.setBrush(QColor(0, 0xBF, 0xFF, 150)); //light blue
     box.translate(boxWidth, 0);
-    box.setBottom(yCenter - qRound((luftB + luftG * (191.0/256.0))/2 * 1.5));
+    box.setBottom(yCenter - qRound((luftB + luftG * (191.0/256.0))/2 * scale));
     painter.drawRect(box);
     painter.setBrush(QColor(0x80, 0x00, 0xFF, 150)); //violet
     box.translate(boxWidth, 0);
-    box.setBottom(yCenter - qRound((luftB + luftR * (180/256.0))/2 * 1.5));
+    box.setBottom(yCenter - qRound((luftB + luftR * (180/256.0))/2 * scale));
     painter.drawRect(box);
 
     painter.setPen(QPen(QBrush(QColor(Qt::gray)), 2));
