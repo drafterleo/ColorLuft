@@ -158,7 +158,8 @@ void CMainWidget::openImage(void)
 {
     QString fileName = QFileDialog::getOpenFileName(this,
                                                     tr("Open Image"),
-                                                    QCoreApplication::applicationDirPath() + "/Images",
+                                                    //QCoreApplication::applicationDirPath() + "/Images",
+                                                    "",
                                                     tr("Image Files (*.png *.jpg)"));
     if (!fileName.isEmpty()) {
         lufter->loadImage(fileName);

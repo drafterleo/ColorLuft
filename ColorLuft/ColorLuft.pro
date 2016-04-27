@@ -1,5 +1,3 @@
-# 15.10.2011
-
 QT += core gui
 QT += widgets
 

@@ -34,7 +34,8 @@ private slots:
     void convergenceTimerTick(void);
 
 protected:
-    virtual void paintEvent(QPaintEvent *event);
+    void paintEvent(QPaintEvent *);
+    void resizeEvent(QResizeEvent *);
 
     void resetLuftParameters();
     void updateAlterImage();

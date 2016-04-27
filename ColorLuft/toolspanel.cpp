@@ -14,8 +14,9 @@ CToolsPanel::CToolsPanel(QWidget *parent)
     setMaximumWidth(100);
 
     autoluftingRBtn = new QRadioButton("auto");
-        autoluftingRBtn->setChecked(true);
+        //autoluftingRBtn->setChecked(true);
     byHandLuftingRBtn = new QRadioButton("by hand");
+        byHandLuftingRBtn->setChecked(true);
 
     QButtonGroup *btnGrp = new QButtonGroup(this);
     btnGrp->addButton(autoluftingRBtn);

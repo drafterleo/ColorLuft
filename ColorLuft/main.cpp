@@ -8,8 +8,8 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
 #ifdef Q_WS_WIN
-    qApp->setStyle("plastique");
-    qApp->setStyleSheet("QAbstractButton {font: bold;}");
+//    qApp->setStyle("plastique");
+//    qApp->setStyleSheet("QAbstractButton {font: bold;}");
 
 //    QFile file(":/styles/global.qss");
 //    file.open(QFile::ReadOnly);

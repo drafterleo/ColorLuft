@@ -25,16 +25,22 @@ void CColorLufter::loadImage(const QString & fileName)
     this->update();
 }
 
-void CColorLufter::paintEvent(QPaintEvent *event)
+void CColorLufter::resizeEvent(QResizeEvent *)
 {
-    Q_UNUSED(event);
 
+}
+
+void CColorLufter::paintEvent(QPaintEvent *)
+{
     QPainter painter(this);
     painter.fillRect(this->rect(), Qt::black);
     if (!alterImage.isNull()) {
-        painter.drawImage((this->width() - alterImage.width()) / 2,
-                          (this->height() - alterImage.height()) / 2,
-                          alterImage);
+        QSize imgSize = alterImage.size();
+        imgSize.scale(this->rect().size(), Qt::KeepAspectRatio);
+        QRect targetRect = QRect(QPoint((this->width() - imgSize.width()) / 2,
+                                        (this->height() - imgSize.height()) / 2),
+                                 imgSize);
+        painter.drawImage(targetRect, alterImage, alterImage.rect());
     }
     if (isImageFaded) {
         painter.fillRect(this->rect(), QColor(0x10, 0x10, 0x10, 200));
